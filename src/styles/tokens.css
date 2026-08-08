@@ -1,0 +1,109 @@
+/* ---------------------------------------------------------------------------
+   Design tokens.
+   Every colour, radius and spacing value used in the app comes from here.
+   Never hard-code a hex value in a component stylesheet.
+   --------------------------------------------------------------------------- */
+
+:root {
+  /* --- Surfaces ------------------------------------------------------------ */
+  --background-cream: #fff9f0;
+  --background-cream-deep: #fdf2e6; /* subtle banding, e.g. sticky header */
+  --surface-pink: #faecf0;
+  --surface-pink-deep: #f6e0e7; /* hover / pressed state of a pink surface */
+  --surface-white: #fffdfa;
+
+  /* --- Accents -------------------------------------------------------------
+     The three background colours are fixed by the brief. The foreground
+     colours below were chosen by measuring contrast against them: every text
+     pairing in this file meets WCAG AA (4.5:1). The palette still reads as
+     cream, strawberry and peach — it is only the ink that got darker. */
+  --accent-strawberry: #f27e99; /* selected states, primary actions */
+  --accent-strawberry-hover: #f9a3b8; /* hover lifts lighter, not darker */
+  --accent-strawberry-deep: #ad4363; /* strawberry as readable ink */
+  --accent-strawberry-soft: #f9c4d1; /* decorative only — borders, bullets */
+  --accent-peach: #f5b895; /* decorative only */
+  --accent-apricot: #e8a06a; /* decorative only */
+  --accent-apricot-ink: #a0591f; /* the same warmth, for small labels */
+  --accent-tomato: #e0705c;
+  --accent-butter: #f2d5a0;
+
+  /* --- Text ---------------------------------------------------------------- */
+  --text-primary: #4a3b38;
+  --text-muted: #7a6560;
+  --text-faint: #75615b;
+  /* Deep cocoa, not white: white on #f27e99 is only 2.6:1 and unreadable. */
+  --text-on-accent: #3d2f2c;
+
+  /* --- Lines --------------------------------------------------------------- */
+  --border-soft: #f0dfd8;
+  --border-pink: #eecdd7;
+  --border-strong: #d9c3bb;
+  --focus-ring: #ad4363;
+
+  /* --- Feedback ------------------------------------------------------------ */
+  --state-ok: #47714b;
+  --state-ok-surface: #eaf3e9;
+  --state-warn: #8a5320;
+  --state-warn-surface: #fbf0e2;
+  --state-error: #b04434;
+  --state-error-surface: #fbe9e5;
+
+  /* --- Radius -------------------------------------------------------------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* --- Spacing scale ------------------------------------------------------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* --- Type ---------------------------------------------------------------- */
+  /* Pixel display face for titles. The preferred licensed faces are tried from
+     the user's own system first; the bundled OFL fonts are the fallback that
+     ships with the app. See README for why they are not bundled. */
+  --font-pixel: '汉仪像素 11px U', 'HYPixel11pxU', 'Chill Pixel', 'ChillPixel',
+    'Zpix', 'Silkscreen', 'Press Start 2P', 'Courier New', monospace;
+  /* Chunkier pixel face, kept for very short accents like the result badge. */
+  --font-pixel-chunky: 'Press Start 2P', 'Silkscreen', 'Courier New', monospace;
+  /* Everything else: readable, warm, boring on purpose. */
+  --font-body: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC',
+    Roboto, Helvetica, Arial, sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.9375rem;
+  --text-md: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+
+  /* --- Elevation (deliberately faint — no heavy shadows) ------------------- */
+  --shadow-soft: 0 1px 2px rgba(122, 90, 80, 0.05);
+  --shadow-lift: 0 4px 14px rgba(196, 138, 150, 0.16);
+
+  /* --- Motion -------------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.22, 0.68, 0.36, 1);
+  --ease-pop: cubic-bezier(0.34, 1.4, 0.64, 1);
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+
+  /* --- Layout -------------------------------------------------------------- */
+  --page-max: 780px;
+  --page-max-wide: 980px;
+  --touch-min: 44px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 1ms;
+    --dur-base: 1ms;
+  }
+}
